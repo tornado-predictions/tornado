@@ -38,20 +38,44 @@ def home():
 @app.route("/predict", methods=["POST"])
 def predict():
 
+    # convert user input from template.html to float and save as variables
     if request.method == "POST":
-        len = float(request.form["len"])
+        leng = float(request.form["leng"])
         wid = float(request.form["wid"])
         fat = float(request.form["fat"])
         slat = float(request.form["slat"])
         slon = float(request.form["slon"])
 
-        data = [[fat, len, wid, slat, slon]]
-        df_user = pd.DataFrame(data, columns=["fat", "len", "wid", "slat", "slon"])
-        print("User input", df_user)
+        # store user inputs as dataframe user_df
+        data = [[fat, leng, wid, slat, slon]]
+        user_df = pd.DataFrame(data, columns=["fat", "len", "wid", "slat", "slon"])
+        # store dataframe used for model as features
         features = tornado_df
-        print("Data References", features)
+        # append user data to tornado data
+        complete = features.append(user_df)
+        # set up scaler and apply scaling
+        scaler = MinMaxScaler()
+        scaled_df = scaler.fit_transform(complete)
+        # Category prediction of user input from model
+        output = model.predict([list(scaled_df[len(scaled_df)-1])])
 
-        return render_template("results.html", classify="working")
+        # Rename output to user friendly text
+        category = ""
+        if(output[0] == 0):
+            category = "EF 0 - Damage Light"
+        elif(output[0] == 1):
+            category = "EF 1 - Damage Moderate"
+        elif(output[0] == 2):
+            category = "EF 2 - Damage Considerable"
+        elif(output[0] == 3):
+            category = "EF 3 - Damage Severe"
+        elif(output[0] == 4):
+            category = "EF 4 - Damage Devastating"
+        elif(output[0] == 5):
+            category = "EF 5 - Damage Incredible"
+        
+
+        return render_template("results.html", classify=category)
 
 # To run application
 if __name__ == '__main__':
