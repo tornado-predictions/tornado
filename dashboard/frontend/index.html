@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Tornadoes</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+
+  <!-- Plotly -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+  <!-- Our CSS -->
+  <link rel="stylesheet" type="text/css" href="static/css/landing-style.css">
+</head>
+
+<body>
+
+  <!--jumbotron-->
+    <div class="row">
+      <div class="col-md-12 jumbotron text-center" style="background-color:#FFFFE0">
+        <div class="container">
+          <h1><strong>Tornadoes Dashboard</strong></h1>
+          <h4><strong>Exploration of U.S. Tornadoes from 2010 to 2015</strong></h4>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+
+    <!-- TEXT SECTION -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="intro">
+          <p><strong>The visualizations are based on data from the 
+          <a href="https://www.weather.gov/" target="_blank" rel="noopener noreferrer">NOAA's National Weather Service</a>.</br> 
+          The charts and maps demonstrate the extent of tornadoes in the U.S., 
+          the severity of tornadoes, and the states with the highest causalties.</strong>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- FORM SECTION FOR PREDICTION -->
+    <div class="row">
+      <div class="col-md-12 text-center">
+        <div class="form">
+          <form action="/predict" method="POST">
+            <section>
+                <label>Enter length in miles</label>
+                <input class="leng" name="leng">
+            </section>
+            <section>
+                <label>Enter width in yards</label>
+                <input class="wid" name="wid">
+            </section>
+            <section>
+                <label>Enter number of fatalities</label>
+                <input class="fat" name="fat">
+            </section>
+            <section>
+                <label>Enter town, state (example: Wichita, Kansas)</label>
+                <input class="place" name="place">
+            </section>
+            
+            <input type="submit" value="Predict EF Category" class="button"/>
+    
+        </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- MAP SECTION-->
+    <div class="row">
+      <!--Interactive map-->
+      <div class="col-md-6 text-center">
+        <p></p>
+        <p><strong>Click Image for Interactive Map</strong><br>
+        Markers show tornado intensity on the F-Scale
+        </p>
+        <a href="map.html" target="_blank" rel="noopener noreferrer">
+          <img class="map-image" src="static/images/map-example.png" alt="Map Image">
+        </a>
+      </div>
+
+      <!--Cluster map-->
+      <div class="col-md-6 text-center">
+        <p></p>
+        <p><strong>Click Image for Cluster Map</strong></br>
+        Clusters show tornado frequency
+        </p>
+      <!-- The div that holds our map -->
+        <a href="cluster.html" target="_blank" rel="noopener noreferrer">
+          <img class="map-image" src="static/images/cluster-map.PNG" alt="Map Image">
+        </a>
+      </div>
+    </div>
+
+    <!-- CHART SECTION-->
+    <div class="row">
+
+      <!--bar chart-->
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+  <!-- div for bar chart -->
+        <div id="bar"></div>
+      </div>
+    
+      <!--line chart-->
+      <div class="col-md-6 d-flex align-items-center justify-content-center">
+      <!-- div for line chart -->
+        <div id="lines"></div>
+      </div>
+
+    <!--row end-->
+    </div>
+
+  <!--container end-->
+  </div>
+
+  <!-- Footer-->
+  <div id="footer">
+    <p>Ajinkya Bhosle, Sandeep Kolwalkar, Brie Pfisterer, and Ryan Strong &copy;2021</p>
+  </div>
+
+  <!-- D3 JavaScript -->
+  <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.2.3/d3.min.js"></script>
+  <script src="https://d3js.org/d3.v5.min.js"></script>
+
+  <!-- Our JavaScript -->
+  <script type="text/javascript" src="static/js/index.js"></script>
+</body>
+
+</html>
