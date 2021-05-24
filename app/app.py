@@ -8,6 +8,9 @@ import pandas as pd
 import pickle
 from sklearn.preprocessing import MinMaxScaler
 
+# For geocoding to get lat long from a city/town
+from geopy.geocoders import Nominatim
+
 #################################################
 # Flask Setup
 #################################################
@@ -35,6 +38,7 @@ def home():
     print(tornado_df)
     return render_template("index.html")
 
+# Get user input and predict tornado category
 @app.route("/predict", methods=["POST"])
 def predict():
 
@@ -43,8 +47,20 @@ def predict():
         leng = float(request.form["leng"])
         wid = float(request.form["wid"])
         fat = float(request.form["fat"])
-        slat = float(request.form["slat"])
-        slon = float(request.form["slon"])
+        place = request.form["place"]
+
+        # convert place to lat and long
+        locator = Nominatim(user_agent="myGeocoder")
+        location = locator.geocode(place)
+
+        slat = location.latitude
+        slon = location.longitude
+
+        print("Latitude", slat)
+        print("Longitude", slon)
+
+        # slat = float(request.form["slat"])
+        # slon = float(request.form["slon"])
 
         # store user inputs as dataframe user_df
         data = [[fat, leng, wid, slat, slon]]
