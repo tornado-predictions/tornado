@@ -1,0 +1,39 @@
+<html>
+
+    <div>
+        <h1>Welcome Tornado Classifier</h1>
+    </div>
+
+    <form action="/predict" method="POST">
+        <section>
+            <label>Enter length in miles</label>
+            <input class="leng" name="leng">
+        </section>
+        <section>
+            <label>Enter width in yards</label>
+            <input class="wid" name="wid">
+        </section>
+        <section>
+            <label>Enter number of fatalities</label>
+            <input class="fat" name="fat">
+        </section>
+        <section>
+            <label>Enter town, state (example: Wichita, Kansas)</label>
+            <input class="place" name="place">
+        </section>
+
+        <!-- Old portion for lat and long - kept for reference-->
+        <!-- <section>
+            <label>Enter latitude</label>
+            <input class="slat" name="slat">
+        </section>
+        <section>
+            <label>Enter longitude</label>
+            <input class="slon" name="slon">
+        </section> -->
+
+        <input type="submit" value="Predict EF Category" class="button"/>
+
+    </form>
+
+</html>
