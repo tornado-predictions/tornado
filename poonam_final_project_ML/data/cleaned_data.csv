@@ -1,4 +1,4 @@
-,Year,Month,Date,Time,State_Name,Magnitude,Loss (Dollars),Length (Miles),Width (Yards),Latitude,Longitude,Total Casualty,adjusted magnitude
+,Year,Month,Date,Time,State_Name,Magnitude,Loss (Dollars),Length (Miles),Width (Yards),Latitude,Longitude,Total Casualty,Adjusted Magnitude
 0,1996,1,1996-01-01,11:25:00,Florida,0,0.04,0.5,35,28.08,-80.6,0,0
 1,1996,1,1996-01-02,18:10:00,South Carolina,0,0.03,0.5,50,33.5,-80.87,0,0
 2,1996,1,1996-01-02,18:20:00,South Carolina,0,0.0,0.3,50,33.5,-80.85,0,0

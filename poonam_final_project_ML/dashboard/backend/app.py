@@ -143,8 +143,9 @@ def predict():
         elif(output[0] == 5):
             category = "EF 5 - Damage Incredible"
         
-        return render_template("results.html", classify=category)
-
+        print(category)
+        
+        return { "classify": category }
 
 # To run applicaton
 
