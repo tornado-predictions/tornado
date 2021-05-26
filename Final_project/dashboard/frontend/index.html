@@ -10,9 +10,23 @@
    
   </script>
   <script >
-     function msg(name){
-       var strText = name;
-     document.getElementById('demos').innerHTML="Your Tornado EF Category Results: "+ strText.msg;
+    //  function msg(name){
+    //    var strText = name;
+    //  document.getElementById('demos').innerHTML="Your Tornado EF Category Results are: "+ strText.msg;
+    // }
+    const test = async() => {
+      let formData = new FormData()
+      formData.append('leng', 1000)
+      formData.append('wid', 10)
+      formData.append('fat', 80)
+      formData.append('place', 'Kansas')
+      let response = await fetch("http://localhost:5000/predict", { 
+        method: 'POST' ,
+        body: formData
+    
+    })
+      let data = await response.json()
+      console.log(data)
     }
   </script>
 
@@ -56,7 +70,7 @@
     <div class="row">
       <div class="col-md-12 text-center">
         <div class="form">
-          <form action="http://localhost:5000/predict" method="POST">
+          <form>
             <section>
                 <label>Enter length in miles</label>
                 <input class="leng" name="leng" id="leng">
@@ -74,11 +88,15 @@
                 <input class="place" name="place">
             </section>
             
-            <input type="button" onClick="msg({classify})" value="Predict EF Category" />
-            <!-- <input type="submit" value="Predict EF Category" class="button"/> -->
-            <!-- <h1>Your Tornado EF Category Results: {{classify}}</h1> -->
+            <!-- <input type="" onClick="msg({name})" value="Predict EF Category" /> -->
+            <!-- <input id="submit" type="submit" value="Predict EF Category" class="button"/> -->
+            <input id="submit" onclick="test()" value="Predict EF Category" class="button"/>
             
           </form>
+          <!-- <div>
+            <h1>Your Tornado EF Category Results: {{classify}}</h1>
+          </div> -->
+          
         <div id='demos'></div>
         </div>
         
