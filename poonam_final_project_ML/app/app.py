@@ -1,3 +1,4 @@
+
 #################################################
 # Tornado Predictions - Final Project
 #################################################
@@ -91,7 +92,7 @@ def predict():
             category = "EF 5 - Damage Incredible"
         
 
-        return render_template("results.html", classify=category)
+        # return render_template("results.html", classify=category)
 
 # To run application
 if __name__ == '__main__':

@@ -10,6 +10,14 @@
     border-radius: 25px;
 }
 
+#video {
+    max-width: 100%;
+    height: auto;
+    border: 20px solid white;
+    margin-bottom: 25px;
+    border-radius: 25px;
+}
+
 #bar {
     max-width: 100%;
     height: auto;
@@ -47,6 +55,27 @@ body {
     border: 20px solid white;
     margin: 20px;
     border-radius: 25px;
+}
+
+#prediction {
+    background-color: white;
+    text-align: center;
+    height: auto;
+    border: 20px solid white;
+    margin: 20px;
+    border-radius: 25px;
+}
+
+.button {
+    background-color: rgb(0, 102, 170);
+    text-align: center;
+    color: white;
+    font-weight: bold
+}
+
+#result {
+    font-size: 150%;
+    font-weight: bold;
 }
 
 /* Sticky Footer rules (https://getbootstrap.com/examples/sticky-footer/) */

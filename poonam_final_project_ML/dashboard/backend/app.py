@@ -5,6 +5,7 @@
 # Dependencies
 
 from flask import Flask, render_template, request, jsonify
+from http.server import BaseHTTPRequestHandler, HTTPServer
 from flask_pymongo import PyMongo
 from flask_cors import CORS
 from pymongo import MongoClient
@@ -45,6 +46,9 @@ tornado_df = pd.read_csv('data/cleaned.csv')
 #################################################
 # Flask Routes
 #################################################
+# class MyHandler(http.server.BaseHTTPRequestHandler):
+    # From jupyter notebook file
+    # tornado_df = pd.read_csv('data/cleaned.csv')
 
 # loads data from file into mongo db and returns geojson
 @app.route("/api/mongo")
@@ -70,28 +74,28 @@ def mongo_data():
         })
     return geo
 
-# reads data from csv and returns top 10 states by causalty
+    # reads data from csv and returns top 10 states by causalty
 @app.route("/api/top10")
 def top10():
     top10 = {}
     top10 = data_cleaning.top10()
     return top10
 
-# reads data from csv and returns month_year totals for financial loss
+    # reads data from csv and returns month_year totals for financial loss
 @app.route("/api/date_loss")
 def date_loss():
     date_loss = {}
     date_loss = data_cleaning.date_loss()
     return date_loss
 
-# # Render html template
-# @app.route("/")
-# def home():
-#     print(model)
-#     print(tornado_df)
-#     return render_template("index.html")
+    # Render html template
+    # @app.route("/")
+    # def home():
+    #     print(model)
+    #     print(tornado_df)
+    #     return render_template("index.html")
 
-# Get user input and predict tornado category
+    # Get user input and predict tornado category
 @app.route("/predict", methods=["POST"])
 def predict():
 
@@ -142,12 +146,21 @@ def predict():
             category = "EF 4 - Damage Devastating"
         elif(output[0] == 5):
             category = "EF 5 - Damage Incredible"
-        
+
         print(category)
         
         return { "classify": category }
+        #render_template("results.html", classify=category)
+
 
 # To run applicaton
+# PORT = 8080
+# Handler = MyHandler#http.server.SimpleHTTPRequestHandler
+
+# with socketserver.TCPServer(("", PORT), Handler) as httpd:
+#     print("serving at port", PORT)
+#     httpd.serve_forever()
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    # app.run(port = 8000)
+    app.run(debug=False)
