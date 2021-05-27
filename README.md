@@ -34,6 +34,8 @@ Objectives
 
 * How has the occurrences changed geologically? Which states/cities have been more experiencing the tornadoes?
 
+![](https://github.com/tornado-predictions/tornado/blob/poonam/poonam_final_project_ML/images/frequency-choropleth-%20animation.png)
+
 ![](https://github.com/tornado-predictions/tornado/blob/poonam/poonam_final_project_ML/images/tornado%20frequency-%20animation.png)
 
 * How do the length and the width correlate to the magnitude of the tornado?
