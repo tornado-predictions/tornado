@@ -52,6 +52,10 @@ Objectives
 
 ![](https://github.com/tornado-predictions/tornado/blob/poonam/poonam_final_project_ML/images/Forecast-%20tornado%20occurrences%20over%20the%20years.png)
 
+* Dashboard - 
+
+![](https://github.com/tornado-predictions/tornado/blob/poonam/poonam_final_project_ML/images/tornado%20prediction%20dashboard.png)
+
 ## Team Members:
 
 * Ajinkya Bhosle
