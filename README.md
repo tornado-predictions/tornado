@@ -2,7 +2,7 @@
 
 ## Project Goal
 
-For this project our group decided to analyze the tornado occurrences in the U. S since 1950, and build a machine learning model to predict tornado category (EF scale).
+For this project our group decided to analyze the tornado occurrences in the U. S since 1950, and build a machine learning model using scikit-learn to predict tornado category (EF scale).
 
 Overall, the number of tornado occurrences has been increasing and presumably will keep increasing, due to the changing weather patterns in the United States and elsewhere.
 
@@ -17,9 +17,26 @@ How has the number of tornadoes changed over the past seven decades in the Unite
 
 ## App
 
-Data cleaned and transformed by using Python Jupyter Notebook.
+- Data cleaned and transformed by using Python Jupyter Notebook
+  - Several machine learning models were tested
+  - Final machine learning model is Decision Tree with a max depth of 5 to prevent overfitting
 
-Python Flask API used.
+- The app contains both a backend and frontend portion:
+
+  - The backend utilizes Flask and the following libraries/modules:
+    - flask_cors to handle Cross Origin Resource Sharing
+    - pymongo to load data and retrieve data from MongoDB
+    - pandas for data manipulation
+    - pickle to load the machine learning model
+    - sklearn for scaling of user inputs for the classification model
+    - geopy to convert user entry of location into latitude and longitude
+
+  - The frontend contains contains the following:
+    - index.html is the main page for the app
+      - Includes javascript to fetch user entered data and populate prediction result
+      - Links to additional map visualizations based on javascript files using Mapbox
+      - Embedded videos using matplotlib and plotly.express
+      - Utilizes bootstrap grid system and d3 for data transformations
 
 ## Data Analysis and Visualization
 
