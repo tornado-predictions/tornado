@@ -1,21 +1,16 @@
+
 #################################################
-# Tornadoes - Project 2
+# Tornadoes - Final Project
 #################################################
 
 # Dependencies
 
-from flask import Flask, render_template, request, jsonify
-from http.server import BaseHTTPRequestHandler, HTTPServer
-from flask_pymongo import PyMongo
+from flask import Flask, request
 from flask_cors import CORS
 from pymongo import MongoClient
 import pandas as pd
 
-# From data_cleaning file
-import data_cleaning
-
 # Imports for predictions
-import numpy as np
 import pickle
 from sklearn.preprocessing import MinMaxScaler
 
@@ -33,6 +28,7 @@ CORS(app)
 # Database and Data Setup
 #################################################
 
+# MongoDB set up
 conn = "mongodb://localhost:27017"
 client = MongoClient(conn)
 
@@ -42,13 +38,9 @@ model = pickle.load(open('data/model.pkl', 'rb'))
 # From jupyter notebook file
 tornado_df = pd.read_csv('data/cleaned.csv')
 
-
 #################################################
 # Flask Routes
 #################################################
-# class MyHandler(http.server.BaseHTTPRequestHandler):
-    # From jupyter notebook file
-    # tornado_df = pd.read_csv('data/cleaned.csv')
 
 # loads data from file into mongo db and returns geojson
 @app.route("/api/mongo")
@@ -74,28 +66,7 @@ def mongo_data():
         })
     return geo
 
-    # reads data from csv and returns top 10 states by causalty
-@app.route("/api/top10")
-def top10():
-    top10 = {}
-    top10 = data_cleaning.top10()
-    return top10
-
-    # reads data from csv and returns month_year totals for financial loss
-@app.route("/api/date_loss")
-def date_loss():
-    date_loss = {}
-    date_loss = data_cleaning.date_loss()
-    return date_loss
-
-    # Render html template
-    # @app.route("/")
-    # def home():
-    #     print(model)
-    #     print(tornado_df)
-    #     return render_template("index.html")
-
-    # Get user input and predict tornado category
+# Get user input from form and predict tornado category
 @app.route("/predict", methods=["POST"])
 def predict():
 
@@ -115,9 +86,6 @@ def predict():
 
         print("Latitude", slat)
         print("Longitude", slon)
-
-        # slat = float(request.form["slat"])
-        # slon = float(request.form["slon"])
 
         # store user inputs as dataframe user_df
         data = [[fat, leng, wid, slat, slon]]
@@ -150,17 +118,8 @@ def predict():
         print(category)
         
         return { "classify": category }
-        #render_template("results.html", classify=category)
 
 
 # To run applicaton
-# PORT = 8080
-# Handler = MyHandler#http.server.SimpleHTTPRequestHandler
-
-# with socketserver.TCPServer(("", PORT), Handler) as httpd:
-#     print("serving at port", PORT)
-#     httpd.serve_forever()
-
 if __name__ == "__main__":
-    # app.run(port = 8000)
     app.run(debug=False)

@@ -44,10 +44,7 @@ let overlays = {
 
 L.control.layers(baseMaps, overlays).addTo(map)
 
-// pull data from mongo api
-d3.json("http://localhost:5000/api/mongo").then(function(data) {
-
-//function return style for each earthquake we plot on the map
+d3.json("https://raw.githubusercontent.com/sandykolu/project2/main/Tornadoes_SPC_1950to2015_small.geojson").then(function(data) {
     function styleInfo(feature){
         return {
             opacity: 1,
@@ -107,6 +104,9 @@ d3.json("http://localhost:5000/api/mongo").then(function(data) {
     legend.onAdd = function() {
         let div = L.DomUtil.create('div', 'info legend');
         const magnitudes = [0,1,2,3,4,5]
+        const ef = ['EF0', 'EF1', 'EF2', 'EF3', 'EF4', 'EF5']
+        const speed = ['65-85 MPH', '86-110 MPH', '111-135 MPH', '136-165 MPH', '166-200 MPH', '>200 MPH']
+        
         const colors = [
             "#98eee0",
             "#d4ee00",
@@ -117,7 +117,7 @@ d3.json("http://localhost:5000/api/mongo").then(function(data) {
         ]
         for(var i = 0; i <magnitudes.length; i++){
             console.log(colors[i])
-            div.innerHTML += `<i style='background:${colors[i]}'></i>` + magnitudes[i] + (magnitudes[i + 1] ? "&dash;" + magnitudes[i + 1] + "<br>": "+")
+            div.innerHTML += `<i style='background:${colors[i]}'></i>` + ef[i] + (ef[i] ? "&nbsp; &nbsp;" + speed[i] + "<br>": "+")
         }
         return div;
     }

@@ -1,3 +1,4 @@
+
 .container {
     padding: 15px;
 }
@@ -10,23 +11,7 @@
     border-radius: 25px;
 }
 
-#video {
-    max-width: 100%;
-    height: auto;
-    border: 20px solid white;
-    margin-bottom: 25px;
-    border-radius: 25px;
-}
-
-#bar {
-    max-width: 100%;
-    height: auto;
-    border: 20px solid white;
-    margin-bottom: 25px;
-    border-radius: 25px;
-}
-
-#lines {
+.video {
     max-width: 100%;
     height: auto;
     border: 20px solid white;
