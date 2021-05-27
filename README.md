@@ -34,11 +34,19 @@ How has the occurrences changed geologically? Which states/cities have been more
 
 How do the length and the width correlate to the magnitude of the tornado?
 
-![]()
+![](https://github.com/tornado-predictions/tornado/blob/poonam/poonam_final_project_ML/images/Analysis-%20Length%20and%20Width.png)
 
 How have financial and agricultural losses changed over the years in each state?
 
 ![]()
+
+Tornado Fatalities animation-
+
+![](https://github.com/tornado-predictions/tornado/blob/poonam/poonam_final_project_ML/images/fatalities-choropleth-%20animation.png)
+
+Forecast-
+
+![](https://github.com/tornado-predictions/tornado/blob/poonam/poonam_final_project_ML/images/Forecast-%20tornado%20occurrences%20over%20the%20years.png)
 
 ## Team Members:
 
