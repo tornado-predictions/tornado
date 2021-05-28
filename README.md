@@ -15,6 +15,24 @@ How has the number of tornadoes changed over the past seven decades in the Unite
   * Source: https://www.spc.noaa.gov/wcm/ 
   * File: 1950-2019_all_tornadoes.csv
 
+## Data Dictionary
+
+|Filed Name |Data Type |Description
+| ---- | ---- | ---- |
+Yr (Year) |	integer	| Year from 1950 - 2019 |
+Mo (Month)|	integer	| Month 
+date	     | Date	   | Timestamp
+st (State)| Varchar	| List of States 
+mag (EF Scale) |	float |	Severity of Tornado
+inj (Injuries) |	float	| No of Injuries occurred
+fat (Fatalities) |	float	| No of fatalities/deaths occurred
+loss 	| float	| Estimated Property loss
+closs |	integer |	Estimated Crop loss
+len |	integer	| Length in miles
+wid	| integer	| Width in yards
+Slat | 	float	| Starting latitude
+Slon | float	 | Starting longitude
+
 ## App
 
 - Data cleaned and transformed by using Python Jupyter Notebook
