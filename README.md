@@ -15,6 +15,8 @@ How has the number of tornadoes changed over the past seven decades in the Unite
   * Source: https://www.spc.noaa.gov/wcm/ 
   * File: 1950-2019_all_tornadoes.csv
 
+## Data Dictionary
+
 |Filed Name |Data Type |Description
 | ---- | ---- | ---- |
 Yr (Year) |	integer	| Year from 1950 - 2019 |
