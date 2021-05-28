@@ -44,15 +44,6 @@ Slon | float	 | Starting longitude
         - We initally had 29 features in the original data set
         - Based on the various models we tested we took into consideration 5 features - len, wid, Slat, Slon, fat and one predictor - mag(EF)
   - Based on our selected feature we found that the champion model is Decision Tree with a max depth of 5 to prevent overfitting
- 
- |Model Name |Training Accuracy |Testing Accuracy
-| ---- | ---- | ---- |
-Logistic Regression |	66%	| 68% |
-Decision Tree |	99%	| 64% |
-Decision Tree(max depth =5) |	70%	| 70% |
-KNN |	77%	| 69% |
-GNB | 66% | 67% |
-SVM |	68%	| 69% |
 
 ## App
 
@@ -78,13 +69,7 @@ SVM |	68%	| 69% |
       - Utilizes bootstrap grid system and d3 for data transformations
 
 ## Model Accuracies
-|Model Name | Training Accuracy | Testing Accuracy
-| ---- | ---- | ---- |
-Yr (Year) |	integer	| Year from 1950 - 2019 |
-Mo (Month)|	integer	| Month 
-date	     | Date	   | Timestamp
-st (State)| Varchar	| List of States 
-mag (EF Scale) |	float |	Severity of Tornad
+
 
 ## Data Analysis and Visualization
 
