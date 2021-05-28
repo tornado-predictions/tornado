@@ -33,6 +33,27 @@ wid	| integer	| Width in yards
 Slat | 	float	| Starting latitude
 Slon | float	 | Starting longitude
 
+## Data Preprocessing
+
+  - Data cleaned and transformed by using Python Jupyter Notebook
+ 
+## Machine Learning Models
+
+  - Several machine learning models were tested like logistic regression, decision tree etc..
+  - Feature selection
+        - We initally had 29 features in the original data set
+        - Based on the various models we tested we took into consideration 5 features - len, wid, Slat, Slon, fat and one predictor - mag(EF)
+  - Based on our selected feature we found that the champion model is Decision Tree with a max depth of 5 to prevent overfitting
+ 
+ |Model Name |Training Accuracy |Testing Accuracy
+| ---- | ---- | ---- |
+Logistic Regression |	66%	| 68% |
+Decision Tree |	99%	| 64% |
+Decision Tree(max depth =5) |	70%	| 70% |
+KNN |	77%	| 69% |
+GNB | 66% | 67% |
+SVM |	68%	| 69% |
+
 ## App
 
 - Data cleaned and transformed by using Python Jupyter Notebook
@@ -55,6 +76,15 @@ Slon | float	 | Starting longitude
       - Links to additional map visualizations based on javascript files using Mapbox
       - Embedded videos using matplotlib and plotly.express
       - Utilizes bootstrap grid system and d3 for data transformations
+
+## Model Accuracies
+|Model Name | Training Accuracy | Testing Accuracy
+| ---- | ---- | ---- |
+Yr (Year) |	integer	| Year from 1950 - 2019 |
+Mo (Month)|	integer	| Month 
+date	     | Date	   | Timestamp
+st (State)| Varchar	| List of States 
+mag (EF Scale) |	float |	Severity of Tornad
 
 ## Data Analysis and Visualization
 
