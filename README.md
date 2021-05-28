@@ -56,10 +56,6 @@ SVM |	68%	| 69% |
 
 ## App
 
-- Data cleaned and transformed by using Python Jupyter Notebook
-  - Several machine learning models were tested
-  - Final machine learning model is Decision Tree with a max depth of 5 to prevent overfitting
-
 - The app contains both a backend and frontend portion:
 
   - The backend utilizes Flask and the following libraries/modules:
@@ -76,9 +72,6 @@ SVM |	68%	| 69% |
       - Links to additional map visualizations based on javascript files using Mapbox
       - Embedded videos using matplotlib and plotly.express
       - Utilizes bootstrap grid system and d3 for data transformations
-
-## Model Accuracies
-
 
 ## Data Analysis and Visualization
 
