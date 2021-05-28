@@ -8,7 +8,7 @@ Overall, the number of tornado occurrences has been increasing and presumably wi
 
 ### Research Question
 
-How has the number of tornadoes changed over the past seven decades in the United States?
+How have tornadoes changed over the past seven decades and understand their impact in United States?
 
 ## Data sources
 
