@@ -66,7 +66,7 @@ SVM |	68%	| 69% |
     - sklearn for scaling of user inputs for the classification model
     - geopy to convert user entry of location into latitude and longitude
 
-  - The frontend contains contains the following:
+  - The frontend contains the following:
     - index.html is the main page for the app
       - Includes javascript to fetch user entered data and populate prediction result
       - Links to additional map visualizations based on javascript files using Mapbox
