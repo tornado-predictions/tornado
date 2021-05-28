@@ -34,14 +34,20 @@ Slat | 	float	| Starting latitude
 Slon | float	 | Starting longitude
 
 
+## Data Preprocessing
 
-
-## App
-
-- Data cleaned and transformed by using Python Jupyter Notebook
+  - Data cleaned and transformed by using Python Jupyter Notebook
+ 
+## Machine Learning Models
   - Several machine learning models were tested
   - Final machine learning model is Decision Tree with a max depth of 5 to prevent overfitting
+ 
+ |Model Name |Training Accuracy |Testing Accuracy
+| ---- | ---- | ---- |
+Logistic Regression |	66%	| 68% |
 
+  
+## App
 - The app contains both a backend and frontend portion:
 
   - The backend utilizes Flask and the following libraries/modules:
