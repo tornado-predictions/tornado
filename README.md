@@ -45,6 +45,15 @@ Slon | float	 | Starting longitude
         - Based on the various models we tested we took into consideration 5 features - len, wid, Slat, Slon, fat and one predictor - mag(EF)
   - Based on our selected feature we found that the champion model is Decision Tree with a max depth of 5 to prevent overfitting
 
+ |Model Name |Training Accuracy |Testing Accuracy
+| ---- | ---- | ---- |
+Logistic Regression |	66%	| 68% |
+Decision Tree |	99%	| 64% |
+Decision Tree(max depth =5) |	70%	| 70% |
+KNN |	77%	| 69% |
+GNB | 66% | 67% |
+SVM |	68%	| 69% |
+
 ## App
 
 - Data cleaned and transformed by using Python Jupyter Notebook
