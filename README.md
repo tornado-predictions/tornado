@@ -2,7 +2,7 @@
 
 ## Project Goal
 
-For this project our group decided to analyze the tornado occurrences in the U. S since 1950, and build a machine learning model using scikit-learn to predict tornado category (EF scale).
+For this project our group decided to analyze the tornado occurrences in the U. S. since 1950, and build a machine learning model using scikit-learn to predict tornado category (EF scale).
 
 Overall, the number of tornado occurrences has been increasing and presumably will keep increasing, due to the changing weather patterns in the United States and elsewhere.
 
